@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=IM+Fell+English+SC&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #0c0a18, #243b55);
+    font-family: 'IM Fell English SC', serif;
+    color: #f0e6d2;
+}
+
+#game-container {
+    position: relative;
+    width: 800px;
+    height: 600px;
+    border: 10px solid;
+    border-image: linear-gradient(to bottom right, #b8860b, #ffd700) 1;
+    box-shadow: 0 0 40px rgba(255, 215, 0, 0.6);
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #000;
+}
+
+#game-canvas {
+    background-color: transparent; /* Make canvas transparent to see container bg */
+    display: block;
+}
+
+#ui-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.menu {
+    pointer-events: all;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px solid #b8860b;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    animation: fadeIn 1s ease-in-out;
+}
+
+.menu h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 4em;
+    color: #ffd700;
+    margin: 0 0 20px 0;
+    text-shadow: 3px 3px 5px #000;
+}
+
+.menu p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.menu button {
+    font-family: 'IM Fell English SC', serif;
+    font-size: 1.5em;
+    padding: 15px 30px;
+    background: linear-gradient(to bottom, #ffd700, #b8860b);
+    color: #3a2d0b;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.menu button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 215, 0, 0.5);
+}
+
+#in-game-ui {
+    width: 100%;
+    height: 100%;
+}
+
+#spell-input-container {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: all;
+}
+
+#spell-input {
+    padding: 15px;
+    width: 350px;
+    border: 2px solid #b8860b;
+    border-radius: 5px;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgba(240, 230, 210, 0.8); /* Parchment-like */
+    color: #3a2d0b;
+    font-family: 'IM Fell English SC', serif;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+#spell-input:focus {
+    outline: none;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 1);
+    transform: scale(1.05);
+}
+
+#score {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 2em;
+    font-weight: 700;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+#level {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2em;
+    font-weight: 700;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
